@@ -9,7 +9,16 @@ export default class App extends Component {
 
     render() {
         return (
-            <Text> Hello World! </Text>
+            <App2></App2>
         );
+    }
+}
+
+
+class App2 extends Component {
+    render() {
+      return (
+        <Text> Hello World2!</Text>
+      )
     }
 }
