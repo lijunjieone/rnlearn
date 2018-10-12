@@ -11,6 +11,10 @@ import {Text,Image,View,StyleSheet,FlatList,WebView,
 
 import ComicMainDemo from './comic';
 
+import MainAppDemo from './flex1';
+
+
+
 export default class App extends Component {
 
     render() {
@@ -28,7 +32,8 @@ export default class App extends Component {
                         {/* <WebViewExample></WebViewExample> */}
 
             {/* <FlexDicTest1></FlexDicTest1> */}
-            <ComicMainDemo></ComicMainDemo>
+            {/* <ComicMainDemo></ComicMainDemo> */}
+            <MainAppDemo></MainAppDemo>
 
             </View>
         );
