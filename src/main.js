@@ -9,12 +9,14 @@ import {Text,Image,View,StyleSheet,FlatList,WebView,
 
 } from 'react-native';
 
+import ComicMainDemo from './comic';
 
 export default class App extends Component {
 
     render() {
         return (
-            <View style={{ alignItems: 'center',alignContent:'center',justifyContent:'center'}}>
+
+            <View style={{ flex:1,flexDirection:'column',justifyContent:'space-between',backgroundColor:'red'}}>
                         {/* <PropTest name="lijunjie"></PropTest>
                         <PropTest name="linian"></PropTest>
                         <PropTest></PropTest> */}
@@ -23,8 +25,10 @@ export default class App extends Component {
                         {/* <LinearLayoutTest> </LinearLayoutTest> */}
                         {/* <FlatListTest></FlatListTest> */}
                         {/* <ScaledWebView></ScaledWebView> */}
-                        <WebViewExample></WebViewExample>
+                        {/* <WebViewExample></WebViewExample> */}
 
+            {/* <FlexDicTest1></FlexDicTest1> */}
+            <ComicMainDemo></ComicMainDemo>
 
             </View>
         );
@@ -286,6 +290,18 @@ class WebViewExample extends React.Component {
 //       );
 //     }
 //   }
+
+class FlexDicTest1 extends Component {
+    render() {
+        return (
+            <View style={{flex:1,flexDirection:'row'}}>
+               <View style={{ width:50,height:50,backgroundColor:'powderblue'}}/>
+               <View style={{ width:50,height:50,backgroundColor:'skyblue'}}/>
+               <View style={{ width:50,height:50,backgroundColor:'steelblue'}}/>
+            </View>
+        )
+    }
+}
   
 
 class ScaledWebView extends React.Component {
