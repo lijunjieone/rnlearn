@@ -2,7 +2,7 @@
 
 import React,{Component } from 'react';
 
-import {Text,Image,View,StyleSheet} from 'react-native';
+import {Text,Image,View,StyleSheet,FlatList} from 'react-native';
 
 
 export default class App extends Component {
@@ -15,7 +15,8 @@ export default class App extends Component {
                         <PropTest></PropTest> */}
 
                         {/* <Blink text="this is a test"></Blink> */}
-                        <LinearLayoutTest> </LinearLayoutTest>
+                        {/* <LinearLayoutTest> </LinearLayoutTest> */}
+                        <FlatListTest></FlatListTest>
 
 
             </View>
@@ -73,6 +74,61 @@ class Blink extends Component {
 
         return (
             <Text style={styles.bigblue}>{display}</Text>
+        )
+    }
+}
+
+class FlatListTest extends Component {
+    render() {
+        return(
+            <View>
+                <FlatList
+                 data={[
+                    {key: 'Devin'},
+                    {key: 'Jackson'},
+                    {key: 'James'},
+                    {key: 'Joel'},
+                    {key: 'John'},
+                    {key: 'Jillian'},
+                    {key: 'Jimmy'},
+                    {key: 'Julie'},
+                    {key: 'Devin'},
+                    {key: 'Jackson'},
+                    {key: 'James'},
+                    {key: 'Joel'},
+                    {key: 'John'},
+                    {key: 'Jillian'},
+                    {key: 'Jimmy'},
+                    {key: 'Julie'},
+                    {key: 'Devin'},
+                    {key: 'Jackson'},
+                    {key: 'James'},
+                    {key: 'Joel'},
+                    {key: 'John'},
+                    {key: 'Jillian'},
+                    {key: 'Jimmy'},
+                    {key: 'Julie'},
+                    {key: 'Devin'},
+                    {key: 'Jackson'},
+                    {key: 'James'},
+                    {key: 'Joel'},
+                    {key: 'John'},
+                    {key: 'Jillian'},
+                    {key: 'Jimmy'},
+                    {key: 'Julie'},
+                    {key: 'Devin'},
+                    {key: 'Jackson'},
+                    {key: 'James'},
+                    {key: 'Joel'},
+                    {key: 'John'},
+                    {key: 'Jillian'},
+                    {key: 'Jimmy'},
+                    {key: 'Julie'},
+                    ]}
+                    renderItem={({item}) => <Text>{item.key}</Text>}
+                    >
+                    </FlatList>
+            </View>
         )
     }
 }
