@@ -2,7 +2,7 @@
 
 import React,{Component } from 'react';
 
-import {Text,Image,View} from 'react-native';
+import {Text,Image,View,StyleSheet} from 'react-native';
 
 
 export default class App extends Component {
@@ -71,7 +71,15 @@ class Blink extends Component {
         let display = this.state.showText ? this.props.text:" ";
 
         return (
-            <Text>{display}</Text>
+            <Text style={styles.bigblue}>{display}</Text>
         )
     }
 }
+
+
+const styles = StyleSheet.create({
+    bigblue:{
+        color:'blue',
+        fontSize:30,
+    },
+});
