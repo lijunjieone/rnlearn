@@ -14,7 +14,8 @@ export default class App extends Component {
                         <PropTest name="linian"></PropTest>
                         <PropTest></PropTest> */}
 
-                        <Blink text="this is a test"></Blink>
+                        {/* <Blink text="this is a test"></Blink> */}
+                        <LinearLayoutTest> </LinearLayoutTest>
 
 
             </View>
@@ -77,6 +78,18 @@ class Blink extends Component {
 }
 
 
+class LinearLayoutTest extends Component {
+    render() {
+        return (
+            <View>
+                <View style={{width:50,height:50,backgroundColor:'powderblue'}} />
+                <View style={{width:100,height:100,backgroundColor:'skyblue'}} />
+                <View style={{width:150,height:150,backgroundColor:'blue'}} />
+
+            </View>
+        )
+    }
+}
 const styles = StyleSheet.create({
     bigblue:{
         color:'blue',
