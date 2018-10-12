@@ -2,7 +2,10 @@
 
 import React,{Component } from 'react';
 
-import {Text,Image,View,StyleSheet,FlatList} from 'react-native';
+import {Text,Image,View,StyleSheet,FlatList,WebView,
+    Button,
+
+} from 'react-native';
 
 
 export default class App extends Component {
@@ -16,7 +19,8 @@ export default class App extends Component {
 
                         {/* <Blink text="this is a test"></Blink> */}
                         {/* <LinearLayoutTest> </LinearLayoutTest> */}
-                        <FlatListTest></FlatListTest>
+                        {/* <FlatListTest></FlatListTest> */}
+                        <ScaledWebView></ScaledWebView>
 
 
             </View>
@@ -133,6 +137,42 @@ class FlatListTest extends Component {
     }
 }
 
+
+
+class ScaledWebView extends React.Component {
+    state = {
+      scalingEnabled: true,
+    };
+  
+    render() {
+      return (
+        <View>
+          <WebView
+            style={{
+              backgroundColor: "blue",
+              width: 300,
+              height: 200,
+            }}
+            source={{uri: 'https://www.baidu.com'}}
+            scalesPageToFit={this.state.scalingEnabled}
+          />
+          <View style={styles.buttons}>
+          { this.state.scalingEnabled ?
+            <Button
+              title="Scaling:ON"
+              enabled={true}
+              onPress={() => this.setState({scalingEnabled: false})}
+            /> :
+            <Button
+              title="Scaling:OFF"
+              enabled={true}
+              onPress={() => this.setState({scalingEnabled: true})}
+            /> }
+          </View>
+        </View>
+      );
+    }
+  }
 
 class LinearLayoutTest extends Component {
     render() {
