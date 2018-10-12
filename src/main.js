@@ -2,14 +2,20 @@
 
 import React,{Component } from 'react';
 
-import {Text,Image} from 'react-native';
+import {Text,Image,View} from 'react-native';
 
 
 export default class App extends Component {
 
     render() {
         return (
-            <TextTest></TextTest>
+            <View style={{ alignItems: 'center',alignContent:'center',justifyContent:'center'}}>
+                        <PropTest name="lijunjie"></PropTest>
+                        <PropTest name="linian"></PropTest>
+                        <PropTest></PropTest>
+
+
+            </View>
         );
     }
 }
@@ -32,6 +38,15 @@ class TextTest extends Component {
     render() {
         return (
             <Text> Hello World!</Text>
+        )
+    }
+}
+
+
+class PropTest extends Component {
+    render() {
+        return(
+            <Text> Hello {this.props.name} </Text>
         )
     }
 }
