@@ -9,13 +9,13 @@ export default class App extends Component {
 
     render() {
         return (
-            <App2></App2>
+            <TextTest></TextTest>
         );
     }
 }
 
 
-class App2 extends Component {
+class ImageTest extends Component {
     render() {
         let pic = {
             uri:'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
@@ -24,5 +24,14 @@ class App2 extends Component {
           
           <Image source={pic} style={{width:193,height:110}} />
       )
+    }
+}
+
+
+class TextTest extends Component {
+    render() {
+        return (
+            <Text> Hello World!</Text>
+        )
     }
 }
