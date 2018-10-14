@@ -13,6 +13,8 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
+import Toast, {DURATION} from 'react-native-easy-toast'
+
 
 
 export default  class MainAppDemo extends Component {
@@ -22,6 +24,31 @@ export default  class MainAppDemo extends Component {
     }
 
 
+    handleTextInputChange = (event) => {
+        var url = event.nativeEvent.text;
+        if(!url.startsWith("http")) {
+            url = "http://"+url;
+        }
+        this.inputText= url;
+        console.log("inputUrl11:"+this.inputText);
+    }
+    pressGoButton = () => {
+    
+    
+        var url = this.inputText.toLowerCase();
+        if(url === this.state.url) {
+            
+        }else {
+            this.setState({
+                url:url,
+            });
+        }
+        this.refs.toast.show('hello world!');
+    
+        console.log("inputUrl:"+url);
+    
+    }
+    
     inputText='';
     render() {
         this.inputText = this.state.url;
@@ -34,7 +61,7 @@ export default  class MainAppDemo extends Component {
             <TouchableOpacity onPress={this.pressGoButton} >
             <Button
             title="go2"
-            onPress={this.pressGoButton}
+            onPress = {() => this.pressGoButton()}
             />
             </TouchableOpacity>
             </View>
@@ -48,15 +75,15 @@ export default  class MainAppDemo extends Component {
             />
             </View>
             <View style={styles.foot}>
-            <Button 
-                        onPress={this.pressGoButton}
+            <Toast ref="toast"/>
 
+            <Button 
+            onPress={this.pressGoButton}
             title="prev">
             </Button>
 
            <Button 
-                       onPress={this.pressGoButton}
-
+            onPress={this.pressGoButton}
             title="back">
             </Button> 
             </View>
@@ -65,27 +92,6 @@ export default  class MainAppDemo extends Component {
     }
 }
 
-
-handleTextInputChange = (event) => {
-    var url = event.nativeEvent.text;
-    if(!url.startsWith("http")) {
-        url = "http://"+url;
-    }
-    this.inputText= url;
-    console.log("inputUrl:"+this.inputText);
-}
-pressGoButton = () => {
-    var url = this.inputText.toLowerCase();
-    if(url === this.state.url) {
-        
-    }else {
-        this.setState({
-            url:url,
-        });
-    }
-    console.log("inputUrl:"+url);
-
-}
 
 
 const styles = {
